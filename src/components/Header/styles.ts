@@ -32,4 +32,8 @@ export const Content = styled.div`
       background: var(--red);
     }
   }
+
+  img {
+    height: 40px;
+  }
 `;
