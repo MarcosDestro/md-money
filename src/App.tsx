@@ -4,6 +4,7 @@ import { GlobalStyle } from './styles/global'
 import Modal from 'react-modal';
 import { useState } from 'react';
 import { NewTransactionModal } from './components/NewTransactionModal';
+import { TransactionsProvider } from './hooks/useTransactions';
 
 // Inidicando qual elemento deve estar o modal (Questão de acessibilidade)
 Modal.setAppElement("#root");
@@ -23,7 +24,7 @@ export function App() {
   }
   
   return (
-    <>
+    <TransactionsProvider>
       <Header 
         onOpenNewTransactionModal={handleOpenNewTransactionModal}
       />
@@ -34,7 +35,7 @@ export function App() {
         onRequestClose={handleCloseNewTransactionModal}/>
       
       <GlobalStyle />
-    </>
+    </TransactionsProvider>
   )
 }
 
